@@ -89,7 +89,7 @@ resource "google_cloud_run_v2_service" "this" {
     }
 
     containers {
-      image = "${var.cloudrun.image_repository}/${var.release.name}"
+      image = "${var.container_registry}/${var.release.name}"
       dynamic "resources" {
         for_each = length(try(var.cloudrun.limits, {})) > 0 ? [1] : []
         content {
