@@ -36,16 +36,6 @@ variable "release" {
   default     = {}
 }
 
-variable "version_label" {
-  description = "Label for the App Engine version."
-  type        = string
-}
-
-variable "absolute_path" {
-  description = "Absolute path to the application source code."
-  type        = string
-}
-
 variable "observability" {
   description = "Observability configuration for monitoring and logging."
   type        = any
