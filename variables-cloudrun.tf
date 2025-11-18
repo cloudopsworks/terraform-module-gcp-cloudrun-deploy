@@ -53,3 +53,8 @@ variable "deployment_sa" {
   default     = ""
   nullable    = false
 }
+
+variable "repository_owner" {
+  description = "Owner of the source code repository."
+  type        = string
+}
