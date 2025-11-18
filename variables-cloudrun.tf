@@ -46,3 +46,10 @@ variable "container_registry" {
   description = "Container Registry configuration for storing container images."
   type        = string
 }
+
+variable "deployment_sa" {
+  description = "Service Account email for deploying Cloud Run services."
+  type        = string
+  default     = ""
+  nullable    = false
+}
