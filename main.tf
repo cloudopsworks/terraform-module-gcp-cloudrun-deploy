@@ -24,10 +24,11 @@ locals {
 }
 
 resource "google_cloud_run_v2_service" "this" {
-  count    = local.is_service ? 1 : 0
-  name     = local.release_name
-  location = var.region
-  ingress  = local.ingress_setting
+  count               = local.is_service ? 1 : 0
+  name                = local.release_name
+  location            = var.region
+  ingress             = local.ingress_setting
+  deletion_protection = try(var.cloudrun.deletion_protection, false)
   dynamic "scaling" {
     for_each = length(try(var.cloudrun.scaling, {})) > 0 ? [1] : []
     content {
@@ -133,4 +134,5 @@ resource "google_cloud_run_v2_service" "this" {
     }
     service_account = google_service_account.cloudrun_sa.email
   }
+  labels = local.all_tags
 }
