@@ -32,9 +32,9 @@ resource "google_project_iam_member" "registry_writer" {
 }
 
 resource "google_project_iam_member" "sa_user" {
-project = google_service_account.cloudrun_sa.project
-role    = "roles/iam.serviceAccountUser"
-member  = google_service_account.cloudrun_sa.member
+  project = google_service_account.cloudrun_sa.project
+  role    = "roles/iam.serviceAccountUser"
+  member  = google_service_account.cloudrun_sa.member
 }
 
 
