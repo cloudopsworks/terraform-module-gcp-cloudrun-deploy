@@ -72,7 +72,7 @@ Available targets:
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | ~> 7.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 7.11.0 |
 
 ## Modules
 
